@@ -1,8 +1,8 @@
 # 🐶 Sparky
 Sparky is a simple API that gives dogs with random name, breed, and age. It is the first API project I made using Spring Boot and containerized using docker.
 # ⭐ Features
-- Request random dogs through `/dogs`, or individual attributes with `names` or `/breeds`
-- Request multiple entries through respective subroutes with how many `/dogs/5`
+- Request random dogs through `/dogs`, or individual attributes with `/names` or `/breeds`
+- Request multiple entries through respective subroutes with number `/dogs/5`
 - Rate limited to 60 requests per minute using bucket4j
 - Data stored in a MySQL database
 - Containerized with Dockerfile and with docker-compose.yml 🐋
