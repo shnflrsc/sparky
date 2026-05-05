@@ -13,38 +13,14 @@ Sparky is a simple API that gives dogs with random name, breed, and age. It is t
 - MySQL
 - Docker
 # 🔨 Configure
-```yaml
-services:
-  db:
-    image: mysql:8.4
-    container_name: sparky-db
-    restart: always
-    environment:
-      MYSQL_DATABASE: sparky
-      MYSQL_ROOT_PASSWORD: mysql # configure mysql root password
-      MYSQL_USER: user # configure user name
-      MYSQL_PASSWORD: password # configure user password
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
-      - db_data:/var/lib/mysql
-    ports:
-      - "3307:3306" # configure which port the database will run
-
-  app:
-    build: .
-    container_name: sparky-api
-    restart: on-failure
-    depends_on:
-      - db
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/sparky?allowPublicKeyRetrieval=true&useSSL=false
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: password
-    ports:
-      - "8080:8080" # configure which port spring boot will run
-
-volumes:
-  db_data:
+Configure by creating a `.env` file in the root of the project directory. Here is an example of a `.env` file:
+```.env
+DB_NAME=sparky
+DB_ROOT_PASSWORD=mysql
+DB_USERNAME=user
+DB_PASSWORD=password
+HOST_DB_PORT=3307
+HOST_APP_PORT=8080
 ```
 # 🚀 Build
 1. Clone the repository
