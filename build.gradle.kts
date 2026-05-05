@@ -19,7 +19,7 @@ tasks.jar {
 }
 
 tasks.bootJar {
-    archiveFileName.set("sparky.jar")
+    archiveFileName.set("app.jar")
 }
 
 repositories {
