@@ -27,11 +27,7 @@ HOST_APP_PORT=8080
 ```bash
 git clone https://github.com/shnflrsc/sparky.git && cd sparky
 ```
-2. Build JAR
-```bash
-./gradlew bootJar
-```
-3. Build image and run
+2. Build image and run
 ```bash
 docker-compose up --build
 ```
